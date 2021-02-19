@@ -18,6 +18,7 @@ export interface FlickrPhoto {
   description: string;
 }
 
+
 export interface FlickrOutput {
   photos: {
     photo: FlickrPhoto[];
