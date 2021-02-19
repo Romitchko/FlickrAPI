@@ -26,6 +26,7 @@ export class SearchImagesComponent implements OnInit {
     }
   }
 
+
   onScroll() {
     if (this.keyword && this.keyword.length > 0) {
       this.flickrService.search_keyword(this.keyword)

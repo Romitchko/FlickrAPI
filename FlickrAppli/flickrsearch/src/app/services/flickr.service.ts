@@ -4,11 +4,18 @@ import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
 export interface FlickrPhoto {
+  data: any;
+  engagement: any;
+  attribution: string;
+  upload: string;
+  owner: string;
+  name: string;
   farm: string;
   id: string;
   secret: string;
   server: string;
   title: string;
+  description: string;
 }
 
 export interface FlickrOutput {
@@ -41,7 +48,14 @@ export class FlickrService {
       res.photos.photo.forEach((ph: FlickrPhoto) => {
         const photoObj = {
           url: `https://farm${ph.farm}.staticflickr.com/${ph.server}/${ph.id}_${ph.secret}`,
-          title: ph.title
+          title: ph.title,
+          owner: ph.owner,
+          attribution: ph.attribution,
+          upload: ph.upload,
+          farm: ph.farm,
+          engagement: ph.engagement,
+          data:ph.data,
+          description: ph.description
         };
         urlArr.push(photoObj);
       });

@@ -4,7 +4,11 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { SearchImagesComponent } from './search-images/search-images.component';
 import { HttpClientModule } from '@angular/common/Http';
+
 import {InfiniteScrollModule} from 'ngx-infinite-scroll';
+
+import { FormsModule } from '@angular/forms';
+import {CommonService} from './common.service';
 
 @NgModule({
   declarations: [
@@ -15,8 +19,9 @@ import {InfiniteScrollModule} from 'ngx-infinite-scroll';
     BrowserModule,
     HttpClientModule,
     InfiniteScrollModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [CommonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
